@@ -1,0 +1,154 @@
+body {
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #d4482f;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+video {
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 8px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+  max-width: 400px;
+  height: auto;
+  border: 4px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#capture-btn {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  background-color: #ff9934;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#capture-btn:hover {
+  background-color: #ff7f00;
+  transform: scale(1.05);
+}
+
+#message {
+  min-height: 80px;
+}
+
+#message h2 {
+  color: #d4482f;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Rose Container and Animation */
+#rose-container {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.rose {
+  position: absolute;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  animation: float-up 6s ease-in-out forwards;
+  opacity: 0;
+}
+
+/* Flower petals */
+.rose .petal {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Arrange petals to form flower shape */
+.rose .petal:nth-child(1) {
+  top: 0;
+  left: 10px;
+}
+.rose .petal:nth-child(2) {
+  top: 10px;
+  left: 0;
+}
+.rose .petal:nth-child(3) {
+  top: 10px;
+  left: 20px;
+}
+.rose .petal:nth-child(4) {
+  top: 20px;
+  left: 10px;
+}
+
+/* Flower center */
+.rose .center {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 15px;
+  height: 15px;
+  background-color: #ff8c00;
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(255, 140, 0, 0.5);
+}
+
+/* Flower stem */
+.rose .stem {
+  position: absolute;
+  top: 30px;
+  left: 22px;
+  width: 6px;
+  height: 50px;
+  background-color: #2e8b57;
+}
+
+/* Animation for roses floating upward */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-600px) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  video,
+  canvas {
+    width: 95%;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
