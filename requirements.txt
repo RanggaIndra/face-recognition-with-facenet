@@ -1,8 +1,0 @@
-flask==2.0.1
-gunicorn==20.1.0
-opencv-python-headless==4.5.3.56
-numpy==1.21.0
-keras-facenet==0.3.2
-tensorflow-cpu==2.6.0
-scikit-learn==1.0.0
-joblib==1.1.0
